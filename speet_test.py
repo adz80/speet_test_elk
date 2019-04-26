@@ -22,5 +22,5 @@ while True:
     # print(json.dumps(speedtest_res))
 
     es.index(index='speedtest', ignore=400, doc_type='json', body=json.dumps(speedtest_res))
+    print(res["download"], res["upload"], res["ping"])
     time.sleep(os.environ.get("TEST_INTERVAL", 600))
-    #print(res["download"], res["upload"], res["ping"])
